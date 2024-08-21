@@ -1,0 +1,49 @@
+.home {
+  padding: 20px;
+}
+
+.add-button {
+  margin-top: 20px;
+}
+
+.mindmap-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mindmap-card {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mindmap-creator {
+  padding: 20px;
+}
+
+.mindmap-canvas {
+  border: 1px solid #000;
+  height: 400px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #f0f0f0;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  margin-bottom: 10px;
+}
