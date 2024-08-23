@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mindmap_project/static/css/main.e6c13ad2.css",
+    "main.js": "/mindmap_project/static/js/main.ec41b44e.js",
+    "index.html": "/mindmap_project/index.html",
+    "main.e6c13ad2.css.map": "/mindmap_project/static/css/main.e6c13ad2.css.map",
+    "main.ec41b44e.js.map": "/mindmap_project/static/js/main.ec41b44e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.ec41b44e.js"
+  ]
+}
