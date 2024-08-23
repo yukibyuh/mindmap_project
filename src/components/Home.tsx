@@ -3,7 +3,7 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, C
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from 'react-router-dom';
-import { MindmapItem } from '../types'; // Import the centralized type
+import { MindmapItem } from '../types';
 
 interface HomeProps {
   mindmaps: MindmapItem[];
@@ -24,7 +24,7 @@ const Home: React.FC<HomeProps> = ({ mindmaps, onAddMindmap, onDeleteMindmap }) 
       date,
       title,
       description,
-      elements: [] // Initialize an empty array for elements
+      elements: []
     };
     onAddMindmap(newMindmap);
     setDate('');
@@ -46,10 +46,12 @@ const Home: React.FC<HomeProps> = ({ mindmaps, onAddMindmap, onDeleteMindmap }) 
   };
 
   return (
-    <div className="home">
-      <Typography variant="h4">MindMap</Typography>
-      <div className="add-button">
-        <Button variant="contained" startIcon={<AddIcon />} onClick={handleClickOpen}>
+    <div className="home" style={{ padding: '20px' }}>
+      <Typography variant="h4" gutterBottom>
+        MindMap
+      </Typography>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+        <Button variant="contained" startIcon={<AddIcon />} onClick={handleClickOpen} style={{ backgroundColor: '#333', color: '#fff' }}>
           Add
         </Button>
       </div>
@@ -95,28 +97,39 @@ const Home: React.FC<HomeProps> = ({ mindmaps, onAddMindmap, onDeleteMindmap }) 
         </DialogActions>
       </Dialog>
 
-      <div className="mindmap-list">
+      <div className="mindmap-list" style={{ display: 'grid', gap: '20px', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}>
         {mindmaps.map((mindmap) => (
           <Card
             key={mindmap.id}
             className="mindmap-card"
             onClick={() => handleCardClick(mindmap.id)}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              padding: '10px',
+              cursor: 'pointer',
+            }}
           >
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 {mindmap.date}
               </Typography>
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" style={{ marginBottom: '10px' }}>
                 {mindmap.title}
               </Typography>
               <Typography color="textSecondary">
                 {mindmap.description}
               </Typography>
             </CardContent>
-            <IconButton aria-label="delete" onClick={(e) => {
-              e.stopPropagation();
-              onDeleteMindmap(mindmap.id);
-            }}>
+            <IconButton
+              aria-label="delete"
+              onClick={(e) => {
+                e.stopPropagation();
+                onDeleteMindmap(mindmap.id);
+              }}
+              style={{ alignSelf: 'flex-end' }}
+            >
               <DeleteIcon />
             </IconButton>
           </Card>

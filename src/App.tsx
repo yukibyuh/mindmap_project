@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // HashRouterに変更
 import Home from './components/Home';
 import MindMap from './components/MindMap';
 import { MindmapItem } from './types';
@@ -32,7 +32,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
+    <Router> {/* HashRouterを使用 */}
       <Routes>
         <Route
           path="/"

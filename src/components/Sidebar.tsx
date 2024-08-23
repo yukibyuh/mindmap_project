@@ -15,11 +15,18 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ addBlackRectangle, addGrayRectangle, addLine, closeSidebar }) => {
   return (
     <div className="sidebar" style={{ width: '200px', background: '#e0e0e0', position: 'absolute', left: 0, top: 0, height: '100vh', padding: '10px' }}>
-      <Button variant="contained" onClick={closeSidebar} startIcon={<CloseIcon />} style={{ display: 'block', margin: '10px' }}>
+      <Button
+        variant="contained"
+        onClick={closeSidebar}
+        startIcon={<CloseIcon />}
+        style={{ display: 'block', margin: '10px', width: '100%', padding: '12px' }} // Increased padding for wider button
+      >
         Close
       </Button>
       <Divider style={{ margin: '10px 0' }} />
-      <Typography variant="h6" gutterBottom>Add</Typography>
+      <Typography variant="h6" gutterBottom>
+        Add
+      </Typography>
       <Button
         variant="text"
         onClick={addBlackRectangle}
