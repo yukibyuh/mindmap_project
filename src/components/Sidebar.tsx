@@ -15,11 +15,12 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ addBlackRectangle, addGrayRectangle, addLine, closeSidebar }) => {
   return (
     <div className="sidebar" style={{ width: '200px', background: '#e0e0e0', position: 'absolute', left: 0, top: 0, height: '100vh', padding: '10px' }}>
+      {/* Close Button moved slightly to the left */}
       <Button
         variant="contained"
         onClick={closeSidebar}
         startIcon={<CloseIcon />}
-        style={{ display: 'block', margin: '10px', width: '100%', padding: '12px' }} // Increased padding for wider button
+        style={{ display: 'block', margin: '10px 0 10px 5px', width: '90%', padding: '12px' }} // Adjusted margin to move left
       >
         Close
       </Button>
@@ -27,11 +28,13 @@ const Sidebar: React.FC<SidebarProps> = ({ addBlackRectangle, addGrayRectangle, 
       <Typography variant="h6" gutterBottom>
         Add
       </Typography>
+
+      {/* Updated Add buttons for wider clickable area */}
       <Button
         variant="text"
         onClick={addBlackRectangle}
         startIcon={<SquareIcon />}
-        style={{ display: 'block', textAlign: 'left', margin: '10px', justifyContent: 'flex-start' }}
+        style={{ display: 'block', textAlign: 'left', margin: '10px', justifyContent: 'flex-start', width: '100%' }} // Full-width button for easier clicking
       >
         Black
       </Button>
@@ -39,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ addBlackRectangle, addGrayRectangle, 
         variant="text"
         onClick={addGrayRectangle}
         startIcon={<RectangleIcon />}
-        style={{ display: 'block', textAlign: 'left', margin: '10px', justifyContent: 'flex-start' }}
+        style={{ display: 'block', textAlign: 'left', margin: '10px', justifyContent: 'flex-start', width: '100%' }} // Full-width button for easier clicking
       >
         Gray
       </Button>
@@ -47,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ addBlackRectangle, addGrayRectangle, 
         variant="text"
         onClick={addLine}
         startIcon={<LineWeightIcon />}
-        style={{ display: 'block', textAlign: 'left', margin: '10px', justifyContent: 'flex-start' }}
+        style={{ display: 'block', textAlign: 'left', margin: '10px', justifyContent: 'flex-start', width: '100%' }} // Full-width button for easier clicking
       >
         Line
       </Button>

@@ -50,7 +50,7 @@ const Home: React.FC<HomeProps> = ({ mindmaps, onAddMindmap, onDeleteMindmap }) 
       <Typography variant="h4" gutterBottom>
         MindMap
       </Typography>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '20px' }}>
         <Button variant="contained" startIcon={<AddIcon />} onClick={handleClickOpen} style={{ backgroundColor: '#333', color: '#fff' }}>
           Add
         </Button>
